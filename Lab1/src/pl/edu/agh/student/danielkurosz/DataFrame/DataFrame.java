@@ -27,11 +27,28 @@ public class DataFrame {
         table=new ArrayList[name_of_columns.length];
         System.arraycopy(df.table, 0, table, 0, table.length);
     }
-    private void add(String[] args){
+    private void add(Object ... args){
         if(args.length!=table.length){
             System.out.printf("blad");
         }else{
             for(int i=0;i<table.length;++i){
+                if(data_types[i].equals("int")){
+                    int x= (Integer)args[i];
+                    table[i].add(x);
+                }else if(data_types[i].equals("char")){
+                    char c=(Character)args[i];
+                    table[i].add(c);
+                }else if(data_types[i].equals("double")){
+                    double c=(Double) args[i];
+                    table[i].add(c);
+                }else if(data_types[i].equals("boolean")){
+                    boolean c=(Boolean) args[i];
+                    System.out.println(c);
+                    table[i].add(c);
+                }else if(data_types[i].equals("float")){
+                    float c=(Float) args[i];
+                    table[i].add(c);
+                }
                 table[i].add(args[i]);
             }
         }
@@ -74,24 +91,24 @@ public class DataFrame {
     }
 
     public static void main(String[] args) {
-        DataFrame dataFrame=new DataFrame(new String[]{"kol1","kol2","kol3"},new String[]{"type1","type2","type3"});
+        DataFrame dataFrame=new DataFrame(new String[]{"kol1","kol2","kol3"},new String[]{"int","String","boolean"});
         System.out.println(dataFrame.size());
-        dataFrame.add(new String[]{"1","31.12","daniel"});
-        dataFrame.add(new String[]{"2","asdasda","lalalala"});
-        dataFrame.add(new String[]{"3","1231a","3.4"});
-        dataFrame.add(new String[]{"4","09000,,,,1","01..1"});
-        dataFrame.add(new String[]{"5","12","1"});
+        dataFrame.add(1,"31.12",true);
+        dataFrame.add(2,"asdasda",false);
+        dataFrame.add(3,"1231a","3.4");
+        dataFrame.add(4,"09000,,,,1","01..1");
+        dataFrame.add(5,"12","1");
 
         System.out.println(dataFrame.size());
         try {
             ArrayList<Object> arrayList=dataFrame.get("kol2");
             for(Object o:arrayList){
-                System.out.println(o.toString());
+                //System.out.println(o.toString());
             }
             DataFrame df=dataFrame.iloc(1,4);
             ArrayList<Object> arrayList1=df.get("kol2");
             for(Object o:arrayList1){
-                System.out.println(o.toString());
+                //System.out.println(o.toString());
             }
         }catch (OwnError ex){
         }
