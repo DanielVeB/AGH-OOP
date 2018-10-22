@@ -134,6 +134,28 @@ public class DataFrame {
     }
 
 
+    public Object[] returnrow(int in){
+        Object[]objects=new Object[table.length];
+        for(int j=0;j<table.length;++j){
+            objects[j]=table[j].get(in);
+        }
+        return objects;
+    }
+
+    public void display(){
+        for(int z=0;z<this.name_of_columns.length;++z){
+            System.out.printf("%-20s | ",this.name_of_columns[z]);
+        }
+        System.out.println();
+        for(int j=0;j<table[0].size();++j){
+            for(int i=0;i<table.length;++i){
+                System.out.printf("%-20s | ",table[i].get(j));
+            }
+            System.out.println();
+        }
+    }
+
+
 
 }
 class OwnError extends Exception{
