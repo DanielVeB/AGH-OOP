@@ -1,4 +1,4 @@
-package pl.edu.agh.student.danielkurosz;
+package pl.edu.agh.student.danielkurosz.zad5;
 
 import java.io.*;
 import java.util.Scanner;

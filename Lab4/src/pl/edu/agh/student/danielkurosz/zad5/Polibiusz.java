@@ -1,4 +1,4 @@
-package pl.edu.agh.student.danielkurosz;
+package pl.edu.agh.student.danielkurosz.zad5;
 
 public class Polibiusz implements Algorithm{
     char[][]Greek_alphabet=new char[][]{

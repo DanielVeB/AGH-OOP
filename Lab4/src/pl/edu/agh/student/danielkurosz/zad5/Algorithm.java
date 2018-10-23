@@ -1,4 +1,4 @@
-package pl.edu.agh.student.danielkurosz;
+package pl.edu.agh.student.danielkurosz.zad5;
 
 public interface Algorithm {
     String crypt(String word);
