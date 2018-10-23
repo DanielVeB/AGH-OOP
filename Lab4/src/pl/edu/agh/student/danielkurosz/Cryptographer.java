@@ -73,7 +73,7 @@ public class Cryptographer {
 
 
     public static void main(String[] args) {
-        Algorithm a=new ROT11();
+        Algorithm a=new Polibiusz();
         cryptfile(args[0], args[1], a);
         decryptfile(args[1],"text",a);
 
