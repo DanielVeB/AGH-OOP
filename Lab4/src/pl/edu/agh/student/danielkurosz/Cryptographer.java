@@ -73,9 +73,48 @@ public class Cryptographer {
 
 
     public static void main(String[] args) {
-        Algorithm a=new Polibiusz();
-        cryptfile(args[0], args[1], a);
-        decryptfile(args[1],"text",a);
+
+        Algorithm algorithm=null;
+
+        System.out.printf("Wybierz algorytm szyfrowania" +
+                "\n1. ROT11" +
+                "\n2. Plansza Polibiusza");
+        int choice=0;
+        while (choice!=1 && choice !=2 ){
+            Scanner scanner=new Scanner(System.in);
+            System.out.print("\n Wpisz numer: ");
+            choice=scanner.nextInt();
+            switch (choice){
+                case 1:
+                    algorithm=new ROT11();
+                    break;
+                case 2:
+                    algorithm=new Polibiusz();
+                    break;
+                default:
+                    System.out.printf("Wpisz 1 albo 2 ");
+
+            }
+        }
+        System.out.printf("1. Szyfrowanie\n2. Deszyfrowanie \nPodaj numer: ");
+        choice=0;
+        while (choice!=1 && choice !=2 ){
+            Scanner scanner=new Scanner(System.in);
+            choice=scanner.nextInt();
+            switch (choice){
+                case 1:
+                    cryptfile(args[0],args[1],algorithm);
+                    break;
+                case 2:
+                    decryptfile(args[0],args[1],algorithm);
+                    break;
+                default:
+                    System.out.printf("Wpisz 1 albo 2 ");
+
+            }
+        }
+
+
 
     }
 }
