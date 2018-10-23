@@ -7,6 +7,12 @@
     <groupId>AGH-OOP</groupId>
     <artifactId>Lab3</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+    </dependencies>
     
 </project>
