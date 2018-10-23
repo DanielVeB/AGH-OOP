@@ -46,6 +46,7 @@ public class ListofShapes {
                 case 2:
                    for (Shape s:shapes){
                        s.draw();
+                       System.out.printf("");
                    }
                     break;
                 case 3:
