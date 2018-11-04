@@ -1,17 +1,19 @@
 package pl.edu.agh.kis.java2015.domain;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedList;
 
-public class Heap {
+public class Heap<T extends Comparable<T>>{
 
     private int heapSize = 0;
-    private ArrayList<Double> tab = new ArrayList<>();
+    private ArrayList<T> tab = new ArrayList<>();
 
-    public void insert(double value) {
+    public void insert(T value) {
         int currentIndex = heapSize;
         int parentIndex = parentIndex(currentIndex);
         tab.add(value);
-        while (isChildGreaterThanParent(currentIndex, parentIndex)) {
+        while (isChildGreaterThanParent(currentIndex, parentIndex)==1) {
             swapElements(currentIndex, parentIndex);
             currentIndex = parentIndex;
             parentIndex = parentIndex(currentIndex);
@@ -19,24 +21,24 @@ public class Heap {
         heapSize++;
     }
     public void display(){
-        for (double i : tab){
+        for (T i : tab){
             System.out.println(i);
         }
     }
 
-    public boolean isChildGreaterThanParent(int currentIndex, int parentIndex) {
-        return tab.get(currentIndex) > tab.get(parentIndex);
+    public int isChildGreaterThanParent(int currentIndex, int parentIndex) {
+        return tab.get(currentIndex).compareTo(tab.get(parentIndex));
     }
 
     public void swapElements(int currentIndex, int parentIndex) {
-        Double parentValue = parentValue(currentIndex);
-        Double currentValue = tab.get(currentIndex);
+        T parentValue = parentValue(currentIndex);
+        T currentValue = tab.get(currentIndex);
         tab.set(parentIndex, currentValue);
         tab.set(currentIndex, parentValue);
     }
 
-    public Double parentValue(int currentIndex) {
-        Double parentValue = tab.get(parentIndex(currentIndex));
+    public T parentValue(int currentIndex) {
+        T parentValue = tab.get(parentIndex(currentIndex));
         return parentValue;
     }
 
@@ -54,23 +56,23 @@ public class Heap {
         return heapSize;
     }
 
-    public double top() {
+    public T top() {
         return tab.get(0);
     }
 
-    public void maxheapify(ArrayList<Double>tab,int i){
+    public void maxheapify(ArrayList<T>tab,int i){
         int l=leftIndex(i);
         int r=rightIndex(i);
         int largest;
-        if(l<heapSize && tab.get(l)>tab.get(i)){
+        if(l<heapSize && tab.get(l).compareTo(tab.get(i))==1){
             largest=l;
         }else largest=i;
-        if(r<heapSize && tab.get(r)>tab.get(largest)){
+        if(r<heapSize && tab.get(r).compareTo(tab.get(largest))==1){
             largest=r;
         }
         if(largest!=i){
-            double ivalue=tab.get(i);
-            double larvalue=tab.get(largest);
+            T ivalue=tab.get(i);
+            T larvalue=tab.get(largest);
             tab.set(i,larvalue);
             tab.set(largest,ivalue);
             maxheapify(tab,largest);
@@ -78,8 +80,8 @@ public class Heap {
 
     }
 
-    public double extractmax() {
-        double max = tab.get(0);
+    public T extractmax() {
+        T max = tab.get(0);
         tab.set(0,tab.get(tab.size()-1));
         tab.remove(tab.size()-1);
         heapSize-=1;
@@ -96,12 +98,18 @@ public class Heap {
      * @param n the value we replace max element of heap
      * @return new max element of heap
      */
-    public double replace(double n){
-        double max=tab.get(0);
+    public T replace(T n){
+        T max=tab.get(0);
         tab.set(0,n);
-        if(n<max){
+        if(max.compareTo(n)==1){
             maxheapify(tab,0);
         }
         return tab.get(0);
     }
+    public void heapify(LinkedList<T>d){
+        for (T obj: d){
+            insert(obj);
+        }
+    }
+
 }
