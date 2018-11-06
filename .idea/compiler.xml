@@ -15,6 +15,8 @@
       <module name="Heap_main" target="1.8" />
       <module name="heap_test" target="1.8" />
       <module name="Heap_test" target="1.8" />
+      <module name="kolokwium_main" target="1.8" />
+      <module name="kolokwium_test" target="1.8" />
       <module name="Lab3" target="1.5" />
       <module name="Lab5" target="1.7" />
       <module name="Lab6_main" target="1.8" />
