@@ -12,11 +12,11 @@ public class Calculator implements Saveable{
     @Override
     public void SavetoFile(double x, String filename)throws FileNotFoundException {
         PrintWriter writer=new PrintWriter(filename);
-        writer.println(result);
+        writer.println(x);
         writer.close();
     }
     public Calculator(){
-        result=0;
+        result=0.;
     }
     public Calculator Add(double x){
         result+=x;
@@ -57,7 +57,7 @@ public class Calculator implements Saveable{
 
         Calculator calculator = new Calculator();
         try {
-            calculator.Add(10).Substract(1).Divide(3).Multiply(2).Factorial().SavetoFile(calculator.result,"resultat.txt");
+            calculator.Add(13).Substract(1).Divide(3).Multiply(2).Factorial().SavetoFile(calculator.result,"resultat.txt");
         }catch (TooBigNumberException | FileNotFoundException ex){
             System.out.println(ex.getMessage());
         }

@@ -22,12 +22,10 @@ public class CalculatorTest {
     }
     @Test public void throwsTooBigNumberException() {
         try {
-            Calculator a = new Calculator();
-            a.Add(12).Factorial();
+            Calculator calculator = new Calculator();
+            calculator.Add(12).Factorial();
             fail("Expected TooBigNumberException to be thrown");
         } catch( TooBigNumberException ex ) {
-            //do some checks with ex
-
         }
     }
 }
