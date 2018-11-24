@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="pane" stylesheets="@../resources/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zad2.Controller.WielomianController">
+   <children>
+      <Label fx:id="label" layoutX="52.0" layoutY="29.0" prefHeight="77.0" prefWidth="447.0" text="Wpisz wielomian: (np: 4x^2 -12x +44)">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="ok" layoutX="1042.0" layoutY="196.0" mnemonicParsing="false" onAction="#oki" prefHeight="44.0" prefWidth="53.0" text="OK" />
+      <TextField fx:id="wielomian" layoutX="52.0" layoutY="106.0" prefHeight="77.0" prefWidth="1043.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1095.0" layoutY="106.0" prefHeight="77.0" prefWidth="91.0" text="=0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="zakres" layoutX="52.0" layoutY="196.0" prefHeight="34.0" prefWidth="102.0" text="Zakres:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="_od" layoutX="149.0" layoutY="200.0" prefHeight="26.0" prefWidth="62.0" />
+      <TextField fx:id="_do" layoutX="261.0" layoutY="200.0" prefHeight="26.0" prefWidth="62.0" />
+      <Label layoutX="216.0" layoutY="200.0" prefHeight="26.0" prefWidth="36.0" text=" do">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="332.0" layoutY="200.0" prefHeight="26.0" prefWidth="69.0" text="krok: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="krok" layoutX="389.0" layoutY="200.0" prefHeight="26.0" prefWidth="69.0" />
+      <Label fx:id="wiadomosc" layoutX="478.0" layoutY="196.0" prefHeight="34.0" prefWidth="550.0" />
+      <LineChart fx:id="linechart" layoutX="52.0" layoutY="261.0" prefHeight="519.0" prefWidth="957.0" stylesheets="@../resources/style.css" title="linechart">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>

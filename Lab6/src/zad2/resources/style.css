@@ -1,0 +1,74 @@
+.pane{
+    -fx-background-color: rgb(99,66,23);
+    -fx-text-fill: white;
+}
+.text-field{
+    -fx-background-color: rgb(255,250,192);
+}
+.label{
+    -fx-text-fill: white;
+}
+
+.button{
+    -fx-background-color:rgb(255,250,192) ;
+    -fx-text-fill: black;
+}
+.button:hover{
+    -fx-font-size: 120%;
+    -fx-background-color:rgb(245,240,182) ;
+    -fx-cursor: hand;
+
+}
+.axis {
+    -fx-tick-label-font: 12pt "Comic Sans MS" ;
+    -fx-tick-label-fill: white ;
+}
+
+.axis .axis-label {
+    -fx-font: 12pt "Comic Sans MS" ;
+    -fx-text-fill: white ;
+}
+
+.chart {
+    -fx-padding: 10px;
+}
+.chart-content {
+    -fx-padding: 30px;
+}
+
+.chart-title {
+    -fx-text-fill: white;
+    -fx-font-size: 1.6em;
+}
+
+.axis-label {
+    -fx-text-fill: rgb(255,245,182);
+}
+
+.chart-legend {
+    -fx-background-color:  transparent;
+    -fx-padding: 20px;
+}
+
+.chart-legend-item-symbol{
+    -fx-background-radius: 0;
+}
+
+.chart-legend-item{
+    -fx-text-fill: rgb(255,245,182);
+}
+
+.chart-plot-background {
+    -fx-background-color: rgb(255,250,192);
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: rgb(255,245,182);
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: rgb(255,245,182);
+}
+.chart-alternative-row-fill {
+    -fx-fill: rgb(255,245,182);
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
