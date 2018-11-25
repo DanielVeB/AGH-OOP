@@ -49,7 +49,10 @@
     -fx-background-color:  transparent;
     -fx-padding: 20px;
 }
-
+.default-color0.chart-line-symbol {
+    -fx-background-radius: 0.0px;
+    -fx-padding: 0.0px;
+}
 .chart-legend-item-symbol{
     -fx-background-radius: 0;
 }

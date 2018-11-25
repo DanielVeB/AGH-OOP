@@ -16,7 +16,6 @@ public class Wielomian {
 public Wielomian(String wyrazenie)throws Exception{
     wartosci= ArrayListMultimap.create();
     wyrazenie=wyrazenie.replaceAll("-","+-");
-    System.out.println(wyrazenie);
     String[] parts = wyrazenie.split("\\+");
     for(String s:parts){
 
@@ -26,7 +25,7 @@ public Wielomian(String wyrazenie)throws Exception{
         if(!s.contains("x")){
             s+="x^0";
         }
-        System.out.println(s);
+
         if(s.matches("-?[0-9]*x\\^[0-9]+")){
             String[]numbers=s.split("x\\^");
             if(Objects.equals(numbers[0], "-"))numbers[0]="-1";
@@ -42,7 +41,6 @@ public Wielomian(String wyrazenie)throws Exception{
             wartosci.put(stopien,ile);
         }
         else{
-            System.out.println("li");
             throw new Exception("Zly format");}
     }
 }

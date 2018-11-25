@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="obslugaosob.Controller.SampleController">
+   <children>
+      <Button layoutX="-101.0" layoutY="-41.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="dodaj" layoutX="40.0" layoutY="160.0" mnemonicParsing="false" onAction="#dodajpracownika" prefHeight="56.0" prefWidth="223.0" text="Dodaj pracownika" />
+      <Button fx:id="wyswietl" layoutX="321.0" layoutY="160.0" mnemonicParsing="false" onAction="#wyswietlpracownikow" prefHeight="56.0" prefWidth="223.0" text="Wyświetl pracowników" />
+   </children>
+</AnchorPane>

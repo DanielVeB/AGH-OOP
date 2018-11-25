@@ -48,8 +48,6 @@ public class WielomianController implements Initializable {
                 series.getData().add(new XYChart.Data<Number, Number>(key,value));
             }
 
-            System.out.println(series.getData());
-
             linechart.getData().add(series);
 
         } catch (Exception ex) {

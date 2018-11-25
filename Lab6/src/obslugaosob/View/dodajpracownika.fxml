@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="obslugaosob.Controller.DodajPracownika">
+   <children>
+      <Label layoutX="39.0" layoutY="40.0" prefHeight="55.0" prefWidth="536.0" text="                                              Dodaj pracownika" />
+      <TextField fx:id="imie" layoutX="280.0" layoutY="105.0" />
+      <TextField fx:id="nazwisko" layoutX="280.0" layoutY="159.0" />
+      <TextField fx:id="wynagrodzenie" layoutX="280.0" layoutY="213.0" />
+      <Button fx:id="potwierdz" layoutX="280.0" layoutY="274.0" mnemonicParsing="false" onAction="#potwierdzenie" text="OK" />
+      <Label layoutX="132.0" layoutY="110.0" prefHeight="16.0" prefWidth="120.0" text="Imie" />
+      <Label layoutX="132.0" layoutY="164.0" prefHeight="16.0" prefWidth="120.0" text="Nazwisko" />
+      <Label layoutX="132.0" layoutY="218.0" prefHeight="16.0" prefWidth="120.0" text="Wynagrodzenie" />
+   </children>
+</AnchorPane>
