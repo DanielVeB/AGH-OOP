@@ -11,7 +11,7 @@ import obslugaosob.Model.WyswietlDodanegoPracownika;
 
 public class DodajPracownika  {
 
-    private Kadra kadra=new Kadra();
+
 
     @FXML
     private Button potwierdz;
@@ -21,9 +21,9 @@ public class DodajPracownika  {
 
     @FXML
     public void potwierdzenie(ActionEvent event){
-        kadra.zarejestrujlistenera(new WyswietlDodanegoPracownika());
-        kadra.zarejestrujlistenera(new WyswietlPracownikow());
-        kadra.dodaj(new Pracownik(imie.getText(),nazwisko.getText(),Double.parseDouble(wynagrodzenie.getText())));
+        Kadra.zarejestrujlistenera(new WyswietlDodanegoPracownika());
+        Kadra.zarejestrujlistenera(new WyswietlPracownikow());
+        Kadra.dodaj(new Pracownik(imie.getText(),nazwisko.getText(),Double.parseDouble(wynagrodzenie.getText())));
 
         Stage stage = (Stage)potwierdz.getScene().getWindow();
         stage.close();

@@ -5,4 +5,9 @@ public class WyswietlDodanegoPracownika implements DodanoPracownika {
     public void dodajpracownika(Pracownik pracownik) {
         System.out.println(pracownik.getImie()+" "+pracownik.getNazwisko()+ " "+pracownik.getWynagrodzenie());
     }
+
+    @Override
+    public void usunpracownika(Pracownik pracownik) {
+        System.out.println("Usunieto: "+pracownik.getNazwisko());
+    }
 }
