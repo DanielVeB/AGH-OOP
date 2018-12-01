@@ -24,9 +24,9 @@ public class Controller implements Initializable{
     @FXML
     private AnchorPane mainPane,connectPane;
     @FXML
-    private Button connectbutton,confirmchoice;
+    private Button connectbutton,confirmchoice,newBook;
     @FXML
-    private Label warning;
+    private Label warning,info;
 
     @FXML
     private TextField url,user,name;
@@ -40,6 +40,10 @@ public class Controller implements Initializable{
     @FXML TableView books;
 
     int i=3;
+
+    @FXML
+    public void addBook(ActionEvent event){}
+
 
     @FXML
     public void connect_with_database(ActionEvent event){
@@ -60,6 +64,8 @@ public class Controller implements Initializable{
     }
     @FXML
     public void confirm(ActionEvent event){
+        info.setVisible(false);
+        books.setVisible(false);
         ResultSet rs=null;
         if(columns.getValue().equals("isbn  ")){
             rs=JDBC.returnbyisbn(name.getText());
@@ -68,20 +74,24 @@ public class Controller implements Initializable{
         }
         try {
             if(!rs.next()){
-                name.setText("Brak takiej ksiazki");
+                info.setVisible(true);
+                info.setText("Brak takiej ksiązki");
+            }else{
+                showtable(rs);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        showtable(rs);
+
 
 
     }
 
     private void showtable(ResultSet rs) {
         try {
-
+            books.setVisible(true);
             ObservableList<ObservableList> data = FXCollections.observableArrayList();
+            books.getColumns().clear();
             for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++){
                 //We are using non property style for making dynamic table
                 final int j = i;
@@ -122,7 +132,7 @@ public class Controller implements Initializable{
         columns.getItems().addAll("isbn  ","author  ");
         url.setText("jdbc:mysql://mysql.agh.edu.pl/");
         password.setText("N5shFdrcVWPFfQfC");
-
+        books.setVisible(false);
 
     }
 }

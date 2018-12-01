@@ -17,11 +17,11 @@ public class JDBC {
 
     }
     public static ResultSet returnbyAuthor(String author){
-        String SQL="SELECT * FROM books WHERE author=?";
+        String SQL="SELECT * FROM books WHERE author LIKE ?";
         ResultSet rs=null;
         CachedRowSetImpl crs = null;
         try(PreparedStatement pstmt=conn.prepareStatement(SQL)){
-            pstmt.setString(1,author);
+            pstmt.setString(1,"%"+author);
             rs=pstmt.executeQuery();
             crs = new CachedRowSetImpl();
             crs.populate(rs);

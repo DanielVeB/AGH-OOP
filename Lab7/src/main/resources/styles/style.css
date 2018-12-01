@@ -71,3 +71,6 @@
     -fx-alignment: center;
     -fx-text-fill: #7D660A;
 }
+.table-row-cell {
+    -fx-cell-size: 60px;
+}
