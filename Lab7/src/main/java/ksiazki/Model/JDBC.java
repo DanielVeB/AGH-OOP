@@ -10,9 +10,7 @@ public class JDBC {
     public static void connect(String url,String user,String password) throws IllegalAccessException,InstantiationException,SQLException,ClassNotFoundException{
 
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-//            conn =
-//       DriverManager.getConnection("jdbc:mysql://mysql.agh.edu.pl/danielku",
-//                            "danielku", "N5shFdrcVWPFfQfC");
+
         conn=DriverManager.getConnection(url,user,password);
 
     }
@@ -44,7 +42,28 @@ public class JDBC {
         }
         return crs;
     }
+    public static void addBook(String isbn,String author,String title,int year)throws Exception{
+        //check isbn value
+        if(!isbn.matches("[0-9]{13}")){
+            throw new Exception("Invalid value of isbn. Should be 13 digits");
+        }
+        String SQL="INSERT INTO books VALUES(?,?,?,?)";
+        PreparedStatement preparedStmt = conn.prepareStatement(SQL);
+        preparedStmt.setString (1, isbn);
+        preparedStmt.setString (2, title);
+        preparedStmt.setString   (3, author);
+        preparedStmt.setInt    (4, year);
+        preparedStmt.execute();
 
+
+    }
+    public static void closeconnection(){
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

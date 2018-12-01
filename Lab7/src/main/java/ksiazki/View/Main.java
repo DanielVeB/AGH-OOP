@@ -31,4 +31,9 @@ public class Main extends Application {
     @Override
     public void init() {
     }
+
+    @Override
+    public void stop() throws Exception {
+        JDBC.closeconnection();
+    }
 }

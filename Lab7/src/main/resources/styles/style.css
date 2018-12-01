@@ -1,7 +1,6 @@
 
 .label{
     -fx-background-color: transparent;
-    -fx-font-size: 40px;
     -fx-text-fill: #8E771B;
     -fx-alignment: center-right;
 }
@@ -11,20 +10,23 @@
 }
 
 .button{
-    -fx-font-size: 40px;
     -fx-text-fill: white;
     -fx-background-color: #8E771B;
 }
-
+#connectbutton{
+    -fx-font-size: 40px;
+}
 .button:hover{
     -fx-cursor: hand;
     -fx-background-color: #7D660A;
     -fx-text-fill: #0D1447;
 }
+#url{    -fx-font-size: 20px;  }
+#user{    -fx-font-size: 20px;  }
+#password{    -fx-font-size: 20px;  }
 
 .text-field{
     -fx-font-family: 'Luckiest Guy', cursive;
-    -fx-font-size: 20px;
     -fx-background-color: #8E771B;
     -fx-text-fill: #0D1447;
 }
@@ -73,4 +75,7 @@
 }
 .table-row-cell {
     -fx-cell-size: 60px;
+}
+#info{
+    -fx-alignment: center;
 }

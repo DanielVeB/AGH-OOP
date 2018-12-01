@@ -9,9 +9,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import ksiazki.Model.JDBC;
 
@@ -42,7 +47,20 @@ public class Controller implements Initializable{
     int i=3;
 
     @FXML
-    public void addBook(ActionEvent event){}
+    public void addBook(ActionEvent event){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/addSong.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            AddBook addBook= fxmlLoader.getController();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+
+    }
 
 
     @FXML
@@ -131,7 +149,6 @@ public class Controller implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         columns.getItems().addAll("isbn  ","author  ");
         url.setText("jdbc:mysql://mysql.agh.edu.pl/");
-        password.setText("N5shFdrcVWPFfQfC");
         books.setVisible(false);
 
     }
