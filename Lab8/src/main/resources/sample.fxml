@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+
+<?import java.util.ArrayList?>
+<AnchorPane prefHeight="600.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucztujacyfilozofowie.Controller.FilozofieController">
+   <children>
+      <Circle fx:id="table" layoutX="401.0" layoutY="351.0" radius="194.0" stroke="BLACK" strokeType="INSIDE">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#ff9f1f" />
+                  <Stop color="#8d5000" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Circle>
+      <Circle fx:id="t1" fill="DODGERBLUE" layoutX="400.0" layoutY="214.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="t2" fill="DODGERBLUE" layoutX="519.0" layoutY="286.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="t3" fill="DODGERBLUE" layoutX="491.0" layoutY="454.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="t4" fill="DODGERBLUE" layoutX="319.0" layoutY="454.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="t5" fill="DODGERBLUE" layoutX="264.0" layoutY="300.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
+      <fx:define>
+         <ArrayList fx:id="plates">
+            <fx:reference source="t1" />
+            <fx:reference source="t2" />
+            <fx:reference source="t3" />
+            <fx:reference source="t4" />
+            <fx:reference source="t5" />
+         </ArrayList>
+      </fx:define>
+      <ImageView fx:id="sokrates" fitHeight="95.0" fitWidth="126.0" layoutX="338.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/filozofowie/sokrates.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="platon" fitHeight="95.0" fitWidth="126.0" layoutX="595.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/filozofowie/platon.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pitagoras" fitHeight="95.0" fitWidth="126.0" layoutX="592.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/filozofowie/pitagoras.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="epikur" fitHeight="95.0" fitWidth="126.0" layoutX="150.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/filozofowie/epikur.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="arystoteles" fitHeight="95.0" fitWidth="126.0" layoutX="123.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/filozofowie/arystoteles.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="148.0" fitWidth="245.0" layoutX="278.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/spaghetti.png" />
+         </image>
+      </ImageView>
+
+      <ImageView id="fork" fx:id="sokrates_fork1" fitHeight="95.0" fitWidth="25.0" layoutX="297.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="sokrates_fork2" fitHeight="95.0" fitWidth="25.0" layoutX="468.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="platon_fork1" fitHeight="95.0" fitWidth="25.0" layoutX="569.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="platon_fork2" fitHeight="95.0" fitWidth="25.0" layoutX="680.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <ImageView id="fork" fx:id="pitagoras_fork1" fitHeight="95.0" fitWidth="25.0" layoutX="562.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <ImageView id="fork" fx:id="pitagoras_fork2" fitHeight="95.0" fitWidth="25.0" layoutX="680.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <ImageView id="fork" fx:id="epikur_fork2" fitHeight="95.0" fitWidth="25.0" layoutX="233.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <ImageView id="fork" fx:id="epikur_fork1" fitHeight="95.0" fitWidth="25.0" layoutX="111.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <ImageView id="fork" fx:id="arystoteles_fork2" fitHeight="95.0" fitWidth="25.0" layoutX="195.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <ImageView id="fork" fx:id="arystoteles_fork1" fitHeight="95.0" fitWidth="25.0" layoutX="88.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" >
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+        </ImageView>
+      <fx:define>
+         <ArrayList fx:id="forks_of_philosophers">
+            <fx:reference source="sokrates_fork1" />
+            <fx:reference source="sokrates_fork2" />
+            <fx:reference source="platon_fork1" />
+            <fx:reference source="platon_fork2" />
+            <fx:reference source="pitagoras_fork1" />
+            <fx:reference source="pitagoras_fork2" />
+            <fx:reference source="epikur_fork1" />
+            <fx:reference source="epikur_fork2" />
+            <fx:reference source="arystoteles_fork1" />
+            <fx:reference source="arystoteles_fork2" />
+         </ArrayList>
+      </fx:define>
+      <ImageView id="fork" fx:id="fork3" fitHeight="95.0" fitWidth="25.0" layoutX="432.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="fork2" fitHeight="95.0" fitWidth="25.0" layoutX="555.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="fork1" fitHeight="95.0" fitWidth="25.0" layoutX="456.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="fork5" fitHeight="95.0" fitWidth="25.0" layoutX="303.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <ImageView id="fork" fx:id="fork4" fitHeight="95.0" fitWidth="25.0" layoutX="257.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fork.png" />
+         </image>
+      </ImageView>
+      <fx:define>
+         <ArrayList fx:id="forks">
+            <fx:reference source="fork1" />
+            <fx:reference source="fork2" />
+            <fx:reference source="fork3" />
+            <fx:reference source="fork4" />
+            <fx:reference source="fork5" />
+         </ArrayList>
+      </fx:define>
+      <ImageView fitHeight="297.0" fitWidth="288.0" layoutX="741.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/waiter.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="area" layoutX="766.0" layoutY="43.0" prefHeight="245.0" prefWidth="235.0" stylesheets="@style.css"/>
+      <Label fx:id="l1" layoutX="321.0" layoutY="24.0" prefHeight="38.0" prefWidth="160.0" stylesheets="@style.css" />
+      <Label fx:id="l2" layoutX="552.0" layoutY="163.0" prefHeight="38.0" prefWidth="160.0" stylesheets="@style.css" />
+      <Label fx:id="l3" layoutX="569.0" layoutY="435.0" prefHeight="38.0" prefWidth="160.0" stylesheets="@style.css" />
+      <Label fx:id="l4" layoutX="100.0" layoutY="441.0" prefHeight="38.0" prefWidth="160.0" stylesheets="@style.css" />
+      <Label fx:id="l5" layoutX="85.0" layoutY="204.0" prefHeight="38.0" prefWidth="160.0" stylesheets="@style.css" />
+      <fx:define>
+         <ArrayList fx:id="labelList">
+            <fx:reference source="l1" />
+            <fx:reference source="l2" />
+            <fx:reference source="l3" />
+            <fx:reference source="l4" />
+            <fx:reference source="l5" />
+         </ArrayList>
+      </fx:define>
+   </children>
+</AnchorPane>
