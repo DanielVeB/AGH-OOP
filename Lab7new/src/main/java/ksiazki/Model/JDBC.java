@@ -1,5 +1,6 @@
 package ksiazki.Model;
 
+
 import com.sun.rowset.CachedRowSetImpl;
 
 import java.sql.*;
@@ -7,9 +8,9 @@ import java.sql.*;
 public class JDBC {
     private static Connection conn = null;
 
-    public static void connect(String url,String user,String password) throws IllegalAccessException,InstantiationException,SQLException,ClassNotFoundException{
+    public static void connect(String url,String user,String password) throws InstantiationException, SQLException, ClassNotFoundException, IllegalAccessException {
 
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Class.forName("com.mysql.jdbc.Driaver").newInstance();
 
         conn=DriverManager.getConnection(url,user,password);
 
@@ -19,7 +20,7 @@ public class JDBC {
         ResultSet rs=null;
         CachedRowSetImpl crs = null;
         try(PreparedStatement pstmt=conn.prepareStatement(SQL)){
-            pstmt.setString(1,"%"+author);
+            pstmt.setString(1,"%"+author+"%");
             rs=pstmt.executeQuery();
             crs = new CachedRowSetImpl();
             crs.populate(rs);
@@ -42,10 +43,10 @@ public class JDBC {
         }
         return crs;
     }
-    public static void addBook(String isbn,String author,String title,int year)throws Exception{
+    public static void addBook(String isbn,String author,String title,int year) throws InvalidISBN, SQLException {
         //check isbn value
         if(!isbn.matches("[0-9]{13}")){
-            throw new Exception("Invalid value of isbn. Should be 13 digits");
+            throw new InvalidISBN("Invalid value of isbn. Should be 13 digits");
         }
         String SQL="INSERT INTO books VALUES(?,?,?,?)";
         PreparedStatement preparedStmt = conn.prepareStatement(SQL);

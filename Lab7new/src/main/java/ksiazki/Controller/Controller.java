@@ -20,6 +20,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import ksiazki.Model.JDBC;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,7 +48,7 @@ public class Controller implements Initializable{
     int i=3;
 
     @FXML
-    public void addBook(ActionEvent event){
+    public void addBook(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/addSong.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
@@ -55,7 +56,7 @@ public class Controller implements Initializable{
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
             stage.show();
-        } catch(Exception e) {
+        } catch(IOException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
@@ -67,9 +68,13 @@ public class Controller implements Initializable{
     public void connect_with_database(ActionEvent event){
 
         try {
+            System.out.println(url.getText());
+            System.out.println(user.getText());
+            System.out.println(password.getText());
             JDBC.connect(url.getText(), user.getText(), password.getText());
             connectPane.setVisible(false);
             mainPane.setVisible(true);
+
         }catch (Exception ex){
             i--;
             if(i==0){
